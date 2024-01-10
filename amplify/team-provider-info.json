@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ceciliavoting2024-dev-194514-authRole",
+      "UnauthRoleArn": "arn:aws:iam::032028878803:role/amplify-ceciliavoting2024-dev-194514-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::032028878803:role/amplify-ceciliavoting2024-dev-194514-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-ceciliavoting2024-dev-194514-deployment",
+      "UnauthRoleName": "amplify-ceciliavoting2024-dev-194514-unauthRole",
+      "StackName": "amplify-ceciliavoting2024-dev-194514",
+      "StackId": "arn:aws:cloudformation:us-west-2:032028878803:stack/amplify-ceciliavoting2024-dev-194514/aacd00a0-af6a-11ee-a637-021b30065e59",
+      "AmplifyAppId": "d19ms9dmoe763s"
+    }
+  }
+}

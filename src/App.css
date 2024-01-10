@@ -1,9 +1,54 @@
-@media (max-width: 1200px) { /* Adjust this breakpoint as needed */
+.form-container {
+  border-radius: 15px; 
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  max-width: 50%;
+  width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+.page-background {
+  min-height: 100vh;
+  background: url('/public/assets/background.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gradient-button {
+  background-size: 200%;
+  background-image: linear-gradient(to left, #ffb2d1, #ff61a2, #ffb2d1); 
+  border: 1px solid #ffb2d1;
+  color: white; 
+  transition:  0.6s ease; 
+  text-transform: uppercase;
+  width: 100px;
+  font-weight: bold;
+}
+
+.gradient-button:hover {
+  background-position: right;
+  border: 1px solid #ffb2d1;
+}
+.popover-header{
+  background-image: linear-gradient(to right, #ffb2d1, #ff61a2);
+  color: white;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+@media (max-width: 1200px) { 
   .mobile-padding {
-    padding-top: 10px; /* Adjust padding as needed */
+    padding-top: 10px;
     padding-bottom: 10px;
   }
   .form-text {
-    font-size: 0.8rem; /* Smaller font size */
+    font-size: 0.8rem;
   }
+  .form-container{
+    width: auto;
+    max-width: 100%;
+  }
+
 }

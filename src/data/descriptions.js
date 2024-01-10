@@ -2,7 +2,7 @@ const descriptions = [
     {
         name: 'caTruong',
         descriptionText: `Musical leader of choir, responsible for song selection and practice;  Set standards for quality of music and commitment to team. 
-        \n Ca Trưởng: Người chịu trách nhiệm trong việc sắp xếp điều khiển âm nhạc cho Ca đoàn trong tất cả những Thánh Lễ.  Chọn lựa thánh ca, sắp xếp và hướng dẫn ban âm nhạc trong các buổi tập hát. Cộng tác với Cha quản nhiệm và ban Thánh Nhạc trong việc lựa chọn Thánh ca cho phù hợp với lịch phụng vụ.`,
+        \n Người chịu trách nhiệm trong việc sắp xếp điều khiển âm nhạc cho Ca đoàn trong tất cả những Thánh Lễ.  Chọn lựa thánh ca, sắp xếp và hướng dẫn ban âm nhạc trong các buổi tập hát. Cộng tác với Cha quản nhiệm và ban Thánh Nhạc trong việc lựa chọn Thánh ca cho phù hợp với lịch phụng vụ.`,
         popoverHeader: 'Ca Trưởng / Musical Director'
     },
     {
@@ -16,7 +16,7 @@ const descriptions = [
         descriptionText: `Operational leader of choir—responsible for making sure deadlines are met and events run smoothly; works with Activities Committee on event planning and execution. 
         \n Người đại diện của ca đoàn. Chuyên trách quản lý nhân sự,thi hành, điều chỉnh nội quy cùng các vấn đề nội bộ trong ca đoàn. Soạn thảo và hướng dẫn các buổi họp của BĐH. Cộng tác với Ca Trưởng đề ra các kế hoạch phát triển, sinh hoạt của ca đoàn trong tinh thần và tôn chỉ Đoàn Kết trong Đức Tin, phục vụ qua Thánh Nhạc
         `,
-        popoverHeader: 'Đoàn Trưởng/ administrative director' 
+        popoverHeader: 'Đoàn Trưởng / Administrative Director' 
     },
     {
         name: 'thuKy',
