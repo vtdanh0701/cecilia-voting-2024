@@ -6,11 +6,19 @@ import DescriptionTooltip from "./components/DescriptionTooltip.js";
 import descriptions from "./data/descriptions.js";
 import formElementArr from "./data/formElementArr.js";
 import "../src/App.css"
+import { Amplify } from "aws-amplify";
+import config from './aws-exports.js'
+import { generateClient } from 'aws-amplify/api';
+import { createVoting } from "./graphql/mutations.js";
+
+Amplify.configure(config)
+const client = generateClient();
+
 
 const App = () => {
     const [validated, setValidated] = useState(false);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
         const formData = new FormData(form);
@@ -21,6 +29,11 @@ const App = () => {
         setValidated(true);
         const data = Object.fromEntries(formData.entries());
         console.log(data);
+        let result = await client.graphql({
+            query: createVoting,
+            variables: {input: data}
+        })
+        console.log('result from graphQL', result)
     };
     return (
         <div className="page-background">

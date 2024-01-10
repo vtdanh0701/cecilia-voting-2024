@@ -10,6 +10,11 @@
       "StackName": "amplify-ceciliavoting2024-dev-194514",
       "StackId": "arn:aws:cloudformation:us-west-2:032028878803:stack/amplify-ceciliavoting2024-dev-194514/aacd00a0-af6a-11ee-a637-021b30065e59",
       "AmplifyAppId": "d19ms9dmoe763s"
+    },
+    "categories": {
+      "api": {
+        "ceciliavoting2024": {}
+      }
     }
   }
 }
