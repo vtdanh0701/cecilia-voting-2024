@@ -10,6 +10,8 @@ import { Amplify } from "aws-amplify";
 import config from './aws-exports.js'
 import { generateClient } from 'aws-amplify/api';
 import { createVoting } from "./graphql/mutations.js";
+import {useNavigate} from 'react-router-dom';
+import ConfirmModel from "./components/ConfirmModel.js";
 
 Amplify.configure(config)
 const client = generateClient();
@@ -17,26 +19,47 @@ const client = generateClient();
 
 const App = () => {
     const [validated, setValidated] = useState(false);
+    const [showModel, setShowModel] = useState(true)
+    const [data, setData] = useState();
+    const navigate = useNavigate()
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;
         const formData = new FormData(form);
-        if (form.checkValidity() === false) {
-            event.preventDefault();
+        setValidated(true);
+        if (form.checkValidity() === true) {
+            const formData = new FormData(form);
+            const dataObj = Object.fromEntries(formData.entries());
+            setData(dataObj); 
+            setShowModel(true); 
+        }
+        else{
             event.stopPropagation();
         }
-        setValidated(true);
-        const data = Object.fromEntries(formData.entries());
-        console.log(data);
-        let result = await client.graphql({
-            query: createVoting,
-            variables: {input: data}
-        })
-        console.log('result from graphQL', result)
+    }
+
+    const handleConfirmSubmit = async ()  => {
+        try{
+            let result = await client.graphql({
+                query: createVoting,
+                variables: {input: data}
+            })
+            console.log('result from graphQL', result)
+        } catch (e){
+            console.error('Error submitting', e.message);
+            throw Error(e);
+        } finally{
+            setShowModel(false)
+            navigate('/thank-you')
+        }
     };
     return (
         <div className="page-background">
+            <ConfirmModel 
+                showModel={showModel} 
+                setShowModel={setShowModel} 
+                handleConfirmSubmit={handleConfirmSubmit}/>
             <Container
                 className='d-flex flex-column justify-content-center align-items-center form-text mobile-padding form-container'
             >
@@ -78,7 +101,7 @@ const App = () => {
                                         <Col xs={12} lg={8}>
                                             <Form.Control
                                                 required
-                                                size='sm'
+                                                size='md'
                                                 type={e.type}
                                                 placeholder={e.placeholder}
                                                 pattern='^[A-Za-zÀ-ỹ ]+$'

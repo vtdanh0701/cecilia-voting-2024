@@ -38,7 +38,10 @@
   font-weight: bold;
   text-transform: uppercase;
 }
-@media (max-width: 1200px) { 
+@media screen and (max-width: 1200px) { 
+  input{
+    font-size: 16px;
+  }
   .mobile-padding {
     padding-top: 10px;
     padding-bottom: 10px;
