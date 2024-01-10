@@ -19,14 +19,13 @@ const client = generateClient();
 
 const App = () => {
     const [validated, setValidated] = useState(false);
-    const [showModel, setShowModel] = useState(true)
+    const [showModel, setShowModel] = useState(false)
     const [data, setData] = useState();
     const navigate = useNavigate()
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;
-        const formData = new FormData(form);
         setValidated(true);
         if (form.checkValidity() === true) {
             const formData = new FormData(form);
